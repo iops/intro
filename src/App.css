@@ -36,3 +36,84 @@
     transform: rotate(360deg);
   }
 }
+
+/* General styles */
+body {
+  background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+  color: #e0e0e0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Accent color for headings and important elements */
+h1, h2, h3, .important {
+  color: #4a9ff5;
+}
+
+/* Different shades of gray for visual hierarchy */
+.secondary-text {
+  color: #b0b0b0;
+}
+
+.tertiary-text {
+  color: #808080;
+}
+
+/* Hover effects for interactive elements */
+button, .interactive {
+  transition: all 0.3s ease;
+}
+
+button:hover, .interactive:hover {
+  background-color: #2a3f5f;
+  transform: translateY(-2px);
+}
+
+/* Subtle box shadows for section separation */
+.section {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+/* Increased contrast for better readability */
+p, li {
+  color: #f0f0f0;
+}
+
+/* Custom font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Subtle animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Slide transition */
+.slide-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms, transform 300ms;
+}
