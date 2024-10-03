@@ -1,5 +1,30 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  ChevronLeft,
+  ChevronRight,
+  Cloud,
+  Server,
+  Shield,
+  Network,
+  Building2,
+  ShieldAlert,
+  BarChart3,
+  AppleIcon,
+  Film,
+  Zap,
+  Lock,
+  Gauge,
+  DollarSign,
+  Layout,
+  Gear,
+  BarChart,
+  Database,
+  BookOpen,
+  Rocket,
+  Phone,
+  Mail,
+  Linkedin
+} from 'lucide-react';
 
 // Slideshow component (previously created)
 const slides = [
