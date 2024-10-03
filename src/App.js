@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
   ChevronLeft,
   ChevronRight,
@@ -319,18 +320,29 @@ const slides = [
 ];
 
 const Slide = ({ title, content }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-    <h2 className="text-2xl font-bold mb-4 text-blue-600">{title}</h2>
+  <div className="section fade-in">
+    <h2 className="text-2xl font-bold mb-4 important">{title}</h2>
     <ul className="list-disc pl-6">
       {content.map((item, index) => (
-        <li key={index} className="mb-2">{item}</li>
+        <li key={index} className="mb-2 secondary-text">{item}</li>
       ))}
     </ul>
   </div>
 );
 
+// const Slide = ({ title, content }) => (
+//   <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+//     <h2 className="text-2xl font-bold mb-4 text-blue-600">{title}</h2>
+//     <ul className="list-disc pl-6">
+//       {content.map((item, index) => (
+//         <li key={index} className="mb-2">{item}</li>
+//       ))}
+//     </ul>
+//   </div>
+// );
+
 const Slideshow = () => {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -341,38 +353,87 @@ const Slideshow = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <Slide {...slides[currentSlide]} />
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+      <TransitionGroup>
+        <CSSTransition key={currentSlide} timeout={300} classNames="slide">
+          <div className="slide-content">
+            <Slide {...slides[currentSlide]} />
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
       <div className="flex justify-between w-full max-w-2xl mt-4">
-        <button onClick={prevSlide} className="bg-blue-500 text-white p-2 rounded-full">
+        <button onClick={prevSlide} className="interactive bg-blue-500 text-white p-2 rounded-full">
           <ChevronLeft size={24} />
         </button>
-        <button onClick={nextSlide} className="bg-blue-500 text-white p-2 rounded-full">
+        <button onClick={nextSlide} className="interactive bg-blue-500 text-white p-2 rounded-full">
           <ChevronRight size={24} />
         </button>
       </div>
-      <div className="mt-4 text-gray-600">
+      <div className="mt-4 tertiary-text">
         Slide {currentSlide + 1} of {slides.length}
       </div>
     </div>
   );
 };
 
-// Header component
+// const Slideshow = () => {
+//   const [currentSlide, setCurrentSlide] = React.useState(0);
+
+//   const nextSlide = () => {
+//     setCurrentSlide((prev) => (prev + 1) % slides.length);
+//   };
+
+//   const prevSlide = () => {
+//     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+//   };
+
+//   return (
+//     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+//       <Slide {...slides[currentSlide]} />
+//       <div className="flex justify-between w-full max-w-2xl mt-4">
+//         <button onClick={prevSlide} className="bg-blue-500 text-white p-2 rounded-full">
+//           <ChevronLeft size={24} />
+//         </button>
+//         <button onClick={nextSlide} className="bg-blue-500 text-white p-2 rounded-full">
+//           <ChevronRight size={24} />
+//         </button>
+//       </div>
+//       <div className="mt-4 text-gray-600">
+//         Slide {currentSlide + 1} of {slides.length}
+//       </div>
+//     </div>
+//   );
+// };
+
 const Header = () => (
-  <header className="bg-blue-600 text-white p-4">
-    <h1 className="text-2xl font-bold">Andres Catalan Consulting</h1>
-    <p>AWS Architecture & DevOps Solutions</p>
+  <header className="section bg-blue-600 text-white p-4">
+    <h1 className="text-2xl font-bold important">Andres Catalan Consulting</h1>
+    <p className="secondary-text">AWS Architecture & DevOps Solutions</p>
   </header>
 );
 
-// Footer component
 const Footer = () => (
-  <footer className="bg-gray-800 text-white p-4 text-center">
-    <p>&copy; 2024 Andres Catalan Consulting. All rights reserved.</p>
-    <p>Contact: andres@onemanops.com | +56 9 34123565</p>
+  <footer className="section bg-gray-800 text-white p-4 text-center">
+    <p className="secondary-text">&copy; 2024 Andres Catalan Consulting. All rights reserved.</p>
+    <p className="tertiary-text">Contact: andres@onemanops.com | +56 9 34123565</p>
   </footer>
 );
+
+// // Header component
+// const Header = () => (
+//   <header className="bg-blue-600 text-white p-4">
+//     <h1 className="text-2xl font-bold">Andres Catalan Consulting</h1>
+//     <p>AWS Architecture & DevOps Solutions</p>
+//   </header>
+// );
+
+// // Footer component
+// const Footer = () => (
+//   <footer className="bg-gray-800 text-white p-4 text-center">
+//     <p>&copy; 2024 Andres Catalan Consulting. All rights reserved.</p>
+//     <p>Contact: andres@onemanops.com | +56 9 34123565</p>
+//   </footer>
+// );
 
 // Main App component
 const App = () => (
