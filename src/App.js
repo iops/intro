@@ -16,7 +16,7 @@ import {
   Gauge,
   DollarSign,
   Layout,
-  Gear,
+  Settings,
   BarChart,
   Database,
   BookOpen,
