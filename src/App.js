@@ -247,7 +247,7 @@ const slides = [
             description: "Robust security measures to protect your AWS environment from threats"
           },
           {
-            icon: <Gear className="w-6 h-6" />,
+            icon: <Settings className="w-6 h-6" />,
             title: "DevOps Implementation",
             description: "Streamline your development and operations with cutting-edge DevOps practices"
           },
