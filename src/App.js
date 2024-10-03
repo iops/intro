@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './App.css';
 import {
   ChevronLeft,
   ChevronRight,
