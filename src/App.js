@@ -297,8 +297,10 @@ const slides = [
     title: "Elevate Your AWS Infrastructure Today",
     content: [
       <div key="cta" className="flex flex-col items-center justify-center h-full">
-        <Rocket className="w-24 h-24 text-yellow-300 mb-6" />
-        <h2 className="text-3xl font-bold mb-4 text-center">Ready to Transform Your Cloud Experience?</h2>
+        <div className="flex items-center mb-6">
+          <Rocket className="w-24 h-24 text-yellow-300 mr-4" />
+          <h2 className="text-3xl font-bold text-center">Ready to Transform Your Cloud Experience?</h2>
+        </div>
         <p className="text-xl mb-8 text-center">Let's discuss how we can optimize your AWS infrastructure, enhance security, and drive your business forward.</p>
         <div className="bg-blue-600 hover:bg-blue-700 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full text-lg cursor-pointer">
           Schedule a Free Consultation
@@ -318,6 +320,28 @@ const slides = [
           </div>
         </div>
       </div>
+      // <div key="cta" className="flex flex-col items-center justify-center h-full">
+      //   <Rocket className="w-24 h-24 text-yellow-300 mb-6" />
+      //   <h2 className="text-3xl font-bold mb-4 text-center">Ready to Transform Your Cloud Experience?</h2>
+      //   <p className="text-xl mb-8 text-center">Let's discuss how we can optimize your AWS infrastructure, enhance security, and drive your business forward.</p>
+      //   <div className="bg-blue-600 hover:bg-blue-700 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-full text-lg cursor-pointer">
+      //     Schedule a Free Consultation
+      //   </div>
+      //   <div className="mt-8 flex space-x-6">
+      //     <div className="flex items-center">
+      //       <Phone className="w-6 h-6 mr-2" />
+      //       <span>(555) 123-4567</span>
+      //     </div>
+      //     <div className="flex items-center">
+      //       <Mail className="w-6 h-6 mr-2" />
+      //       <span>andres@onemanops.com</span>
+      //     </div>
+      //     <div className="flex items-center">
+      //       <Linkedin className="w-6 h-6 mr-2" />
+      //       <span>linkedin.com/in/christianrubio</span>
+      //     </div>
+      //   </div>
+      // </div>
     ]
   }
 ];
