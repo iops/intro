@@ -170,13 +170,13 @@ const slides = [
             impact: "Restored operations in record time and strengthened overall security posture"
           }
         ].map((project, index) => (
-          <div key={index} className="bg-white bg-opacity-20 p-4 rounded-lg flex items-start">
-            <div className="mr-4 bg-blue-500 rounded-full p-2">{project.icon}</div>
-            <div>
-              <h3 className="font-bold text-lg mb-1">{project.company}</h3>
-              <p className="text-sm mb-2">{project.description}</p>
-              <p className="text-xs italic">Impact: {project.impact}</p>
+          <div key={index} className="bg-white bg-opacity-20 p-4 rounded-lg">
+            <div className="flex items-center mb-2">
+              <div className="mr-4 bg-blue-500 rounded-full p-2">{project.icon}</div>
+              <h3 className="font-bold text-lg">{project.company}</h3>
             </div>
+            <p className="text-sm mb-2">{project.description}</p>
+            <p className="text-xs italic">Impact: {project.impact}</p>
           </div>
         ))}
       </div>
@@ -213,8 +213,8 @@ const slides = [
         ].map((prop, index) => (
           <div key={index} className="bg-white bg-opacity-20 p-4 rounded-lg">
             <div className="flex items-center mb-2">
-             <div className="mr-4 bg-blue-500 rounded-full p-2">{prop.icon}</div>
-              <h3 className="font-bold text-lg mb-2">{prop.title}</h3>
+              <div className="mr-4 bg-blue-500 rounded-full p-2">{prop.icon}</div>
+              <h3 className="font-bold text-lg">{prop.title}</h3>
             </div>
             <p className="text-sm">{prop.description}</p>
           </div>
