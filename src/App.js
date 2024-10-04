@@ -211,12 +211,12 @@ const slides = [
             description: "Benefit from our strategies to optimize your AWS spend without compromising on performance or security."
           }
         ].map((prop, index) => (
-          <div key={index} className="bg-white bg-opacity-20 p-4 rounded-lg flex items-start">
-            <div className="mr-4 bg-blue-500 rounded-full p-2">{prop.icon}</div>
-            <div>
+          <div key={index} className="bg-white bg-opacity-20 p-4 rounded-lg">
+            <div className="flex items-center mb-2">
+             <div className="mr-4 bg-blue-500 rounded-full p-2">{prop.icon}</div>
               <h3 className="font-bold text-lg mb-2">{prop.title}</h3>
-              <p className="text-sm">{prop.description}</p>
             </div>
+            <p className="text-sm">{prop.description}</p>
           </div>
         ))}
       </div>,
@@ -280,8 +280,10 @@ const slides = [
           }
         ].map((service, index) => (
           <div key={index} className="bg-white bg-opacity-20 p-4 rounded-lg flex flex-col items-center text-center">
-            <div className="mb-2 bg-blue-500 rounded-full p-2">{service.icon}</div>
-            <h3 className="font-bold text-md mb-2">{service.title}</h3>
+            <div className="flex items-center mb-2">
+              <div className="mr-2 bg-blue-500 rounded-full p-2">{service.icon}</div>
+              <h3 className="font-bold text-md">{service.title}</h3>
+            </div>
             <p className="text-xs">{service.description}</p>
           </div>
         ))}
@@ -308,7 +310,7 @@ const slides = [
           </div>
           <div className="flex items-center">
             <Mail className="w-6 h-6 mr-2" />
-            <span>christian.rubio@example.com</span>
+            <span>andres@onemanops.com</span>
           </div>
           <div className="flex items-center">
             <Linkedin className="w-6 h-6 mr-2" />
